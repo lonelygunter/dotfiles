@@ -49,7 +49,8 @@ transKOReader() {
 	scp -P 2552 -r "$1" root@192.168.1.248:/mnt/onboard/"$2"
 }
 
-
+# alias for ghidra
+alias ghidra='/opt/homebrew/Caskroom/ghidra/10.2.3-20230208/ghidra_10.2.3_PUBLIC/ghidraRun'
 
 # function to convert md to pdf
 alias mdtopdf='pandoc -V geometry:margin=0.5in -V fontsize:17pt -V documentclass=extarticle '
@@ -62,3 +63,7 @@ SE="/Users/matt/Documents/Github/2nd-brain/box/Uni/SE"
 SAED="/Users/matt/Documents/Github/2nd-brain/box/Uni/SAED"
 IOT="/Users/matt/Documents/Github/2nd-brain/box/Uni/IOT"
 BOX="/Users/matt/Documents/Github/2nd-brain/box"
+
+# alias for Tomcat
+alias tomcatStartup='cd /Library/Tomcat/bin; ./startup.sh'
+alias tomcatShutdown='cd /Library/Tomcat/bin; ./shutdown.sh'
