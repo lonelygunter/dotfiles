@@ -105,7 +105,7 @@ IOT="/Users/matt/Documents/Github/2nd-brain/box/Uni/IOT"
 BOX="/Users/matt/Documents/Github/2nd-brain/box"
 GHUB="/Users/matt/Documents/Github"
 GLAB="/Users/matt/Documents/GitLab"
-FRAG="/Users/matt/Documents/GitLab/ff-fragmentalis/"
+FRAG="/Users/matt/Documents/FoolFarm/ff-fragmentalis/"
 
 # alias for Tomcat
 alias tomcatStartup='cd /Library/Tomcat/bin; ./startup.sh'
