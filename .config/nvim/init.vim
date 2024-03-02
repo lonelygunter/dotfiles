@@ -1,4 +1,5 @@
 :set number
+:set relativenumber
 :set autoindent
 :set tabstop=2
 :set smarttab
@@ -17,6 +18,9 @@ Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
 Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
 Plug 'https://github.com/neoclide/coc.nvim'  " Auto Completion
 Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
+Plug 'https://github.com/preservim/vim-markdown' " Markdown tool
+Plug 'https://github.com/iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' } " Markdown preview
+Plug 'junegunn/limelight.vim' " to light the current paragraph
 
 call plug#end()
 
@@ -41,3 +45,4 @@ colorscheme onehalflight
 
 " coc.vim to confirm
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+

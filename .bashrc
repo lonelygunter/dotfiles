@@ -2,6 +2,7 @@
 export CLICOLOR=1
 export LSCOLORS=GxFaCxDxBxegedabagaced
 export BASH_SILENCE_DEPRECATION_WARNING=1
+export PATH=/opt/homebrew/bin:$PATH
 #gxbaCxDxcxegedabagaced
 #GxFxCxDxBxegedabagaced
 
@@ -52,6 +53,7 @@ alias history='history | less'
 
 # alias for python
 alias python=python3
+alias pip=pip3
 
 # alias to move more easier
 alias ll='ls -la'
@@ -61,8 +63,6 @@ alias la='ls -A'
 pman() {
 	man -t "$1" | open -f -a /System/Applications/Preview.app
 }
-
-. "$HOME/.cargo/env"
 
 # alias for ssh unisalento
 alias hplinux3='ssh -p 2552 aaprile317@hplinux3.unisalento.it'
@@ -97,19 +97,11 @@ alias mdtopdf='pandoc -V geometry:margin=0.5in -V fontsize:17pt -V documentclass
 
 # define variable
 INC="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/"
-GIT="/Users/matt/Documents/Github"
-SS="/Users/matt/Documents/Github/2nd-brain/box/Uni/SS"
-SE="/Users/matt/Documents/Github/2nd-brain/box/Uni/SE"
-SAED="/Users/matt/Documents/Github/2nd-brain/box/Uni/SAED"
-IOT="/Users/matt/Documents/Github/2nd-brain/box/Uni/IOT"
+SL="/Users/matt/Documents/Github/2nd-brain/box/Uni/SL"
+ML="/Users/matt/Documents/Github/2nd-brain/box/Uni/ML"
 BOX="/Users/matt/Documents/Github/2nd-brain/box"
 GHUB="/Users/matt/Documents/Github"
 GLAB="/Users/matt/Documents/GitLab"
-FRAG="/Users/matt/Documents/FoolFarm/ff-fragmentalis/"
-
-# alias for Tomcat
-alias tomcatStartup='cd /Library/Tomcat/bin; ./startup.sh'
-alias tomcatShutdown='cd /Library/Tomcat/bin; ./shutdown.sh'
 
 # alias for exiftool (tool to delete metadata)
 alias delmeta='exiftool -all='
@@ -118,7 +110,6 @@ alias delmeta='exiftool -all='
 alias gitk='gitk --all'
 alias gitb='git branch -a'
 alias gitf='git fetch --prune'
-
 
 # foolfarm aliases
 alias ffDockerFormat='docker ps --format "table {{.Names}}\t{{.ID}}\t{{.Status}}\t"'
