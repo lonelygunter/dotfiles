@@ -2,7 +2,7 @@
 export CLICOLOR=1
 export LSCOLORS=GxFaCxDxBxegedabagaced
 export BASH_SILENCE_DEPRECATION_WARNING=1
-export PATH=/opt/homebrew/bin:$PATH
+export PATH=/opt/homebrew/bin:$PATH:/usr/local/texlive/2024basic/bin/universal-darwin
 #gxbaCxDxcxegedabagaced
 #GxFxCxDxBxegedabagaced
 
