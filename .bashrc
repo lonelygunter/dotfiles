@@ -26,14 +26,22 @@ LMAGENTA='\[\033[00;95m\]'
 LCYAN='\[\033[00;96m\]'
 
 NC='\[\033[00m\]'
+
 gitONprompt() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/─( \1)/'
 }
+
+venvONprompt() {
+  if [[ -n "$VIRTUAL_ENV" ]]; then
+    echo "─($(basename $VIRTUAL_ENV))"
+  fi
+}
+
 promptCustom(){
   if [ $? -eq 0 ]; then
-    PS1="\n${CYAN}┌──(${NC}${MAGENTA}\u@\h${NC}${CYAN})─[${NC}${BLACK}\w${NC}${CYAN}]\$(gitONprompt) ${LGRAY}\@${NC} ${CYAN}[${NC}${LGREEN}${NC}${CYAN}]\n${NC}${CYAN}└─${NC}${MAGENTA}\$${NC} "
+					PS1="\n${CYAN}┌──(${NC}${MAGENTA}\u@\h${NC}${CYAN})─[${NC}${LGRAY}\w${NC}${CYAN}]\$(gitONprompt)\$(venvONprompt) ${LGRAY}\@${NC} ${CYAN}[${NC}${LGREEN}O${NC}${CYAN}]\n${NC}${CYAN}└─${NC}${MAGENTA}\$${NC} "
   else 
-    PS1="\n${CYAN}┌──(${NC}${MAGENTA}\u@\h${NC}${CYAN})─[${NC}${BLACK}\w${NC}${CYAN}]\$(gitONprompt) ${LGRAY}\@${NC} ${CYAN}[${NC}${LRED}${NC}${CYAN}]\n${NC}${CYAN}└─${NC}${MAGENTA}\$${NC} "
+    PS1="\n${CYAN}┌──(${NC}${MAGENTA}\u@\h${NC}${CYAN})─[${NC}${LGRAY}\w${NC}${CYAN}]\$(gitONprompt)\$(venvONprompt) ${LGRAY}\@${NC} ${CYAN}[${NC}${LRED}X${NC}${CYAN}]\n${NC}${CYAN}└─${NC}${MAGENTA}\$${NC} "
   fi
 }
 
@@ -52,8 +60,8 @@ PROMPT_COMMAND=promptCustom
 alias history='history | less'
 
 # alias for python
-alias python=python3
-alias pip=pip3
+# alias python=python3
+# alias pip=pip3
 
 # alias to move more easier
 alias ll='ls -la'
@@ -97,11 +105,8 @@ alias mdtopdf='pandoc -V geometry:margin=0.5in -V fontsize:17pt -V documentclass
 
 # define variable
 INC="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/"
-SL="/Users/matt/Documents/Github/2nd-brain/box/Uni/SL"
-ML="/Users/matt/Documents/Github/2nd-brain/box/Uni/ML"
-BOX="/Users/matt/Documents/Github/2nd-brain/box"
-GHUB="/Users/matt/Documents/Github"
-GLAB="/Users/matt/Documents/GitLab"
+GH="/Users/matt/Documents/Github"
+GL="/Users/matt/Documents/GitLab"
 
 # alias for exiftool (tool to delete metadata)
 alias delmeta='exiftool -all='
@@ -113,3 +118,12 @@ alias gitf='git fetch --prune'
 
 # foolfarm aliases
 alias ffDockerFormat='docker ps --format "table {{.Names}}\t{{.ID}}\t{{.Status}}\t"'
+
+# python venv alias
+alias vact='source .env/bin/activate'
+alias vcre='/opt/homebrew/bin/python3 -m venv .env'
+alias vdel='rm -rf .env'
+alias vres='vdel; vcre; vact'
+
+# Green server TU Delft
+alias gserver='ssh -i ~/.ssh/id_tudelft_greenserver matteo-aprile@145.94.32.58'
