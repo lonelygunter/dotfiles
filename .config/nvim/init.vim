@@ -74,6 +74,3 @@ set encoding=UTF-8
 set background=light
 colorscheme onehalflight
 
-" coc.vim to confirm
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
-
