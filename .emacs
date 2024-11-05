@@ -9,6 +9,8 @@
 (setq org-todo-keywords
       '((sequence "TODO" "WAIT" "|" "DONE")))
 
+(add-hook 'org-mode-hook 'org-indent-mode)
+
 ;; Ensure Org mode is loaded
 (require 'org)
 
